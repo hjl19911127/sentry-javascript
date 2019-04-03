@@ -1,5 +1,14 @@
 # Changelog
 
+## 5.0.4
+
+- [integrations] fix: Not requiring angular types
+
+## 5.0.3
+
+- [hub] fix: Don't reset registry when there is no hub on the carrier #1969
+- [integrations] fix: Export dedupe integration
+
 ## 5.0.2
 
 - [browser] fix: Remove `browser` field from `package.json`
