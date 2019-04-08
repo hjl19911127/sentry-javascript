@@ -1,8 +1,5 @@
 import { Breadcrumb, Event, EventHint, EventProcessor, Scope as ScopeInterface, Severity, User } from '@sentry/types';
-import { isThenable } from '@sentry/utils/is';
-import { getGlobalObject } from '@sentry/utils/misc';
-import { normalize } from '@sentry/utils/object';
-import { SyncPromise } from '@sentry/utils/syncpromise';
+import { getGlobalObject, isThenable, normalize, SyncPromise } from '@sentry/utils';
 
 /**
  * Holds additional event information. {@link Scope.applyToEvent} will be
@@ -99,7 +96,7 @@ export class Scope implements ScopeInterface {
   /**
    * @inheritDoc
    */
-  public setUser(user: User): this {
+  public setUser(user: User | null): this {
     this._user = normalize(user);
     this._notifyScopeListeners();
     return this;
